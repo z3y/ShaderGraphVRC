@@ -4,11 +4,8 @@ Modified ShaderGraph Built-in pipeline target for Unity 2022 for VRChat (Forward
 
 ## Installation
 
-- Add the listing `Settings > Packages > Add Repository` in VRChat Creator Companion
+- Add the listing in VRChat Creator Companion: https://z3y.github.io/vpm-package-listing/
 
-```
-https://z3y.github.io/vpm-package-listing/
-```
 
 - Select your project (Manage Project) and import the `Shader Graph VRC` package
 
