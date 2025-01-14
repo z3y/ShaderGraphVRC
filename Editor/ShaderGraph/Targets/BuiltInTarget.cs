@@ -71,8 +71,6 @@ namespace z3y.BuiltIn.ShaderGraph
         public const string kTemplatePath = "Packages/io.z3y.github.shadergraph/Editor/ShaderGraph/Templates/ShaderPass.template";
         public const string kGrabPassTemplatePath = "Packages/io.z3y.github.shadergraph/Editor/ShaderGraph/Templates/GrabPass.template";
 
-        public const string kDefaultGUI = "z3y.BuiltIn.ShaderGraph.BuiltInLitGUI";
-
         // SubTarget
         List<SubTarget> m_SubTargets;
         List<string> m_SubTargetNames;

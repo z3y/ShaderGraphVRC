@@ -1,7 +1,7 @@
 {
   "name": "io.z3y.github.shadergraph",
   "description": "Shader Graph Built-In Target for VRChat",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "unity": "2022.3",
   "displayName": "Shader Graph VRC",
   "hideInEditor": false,

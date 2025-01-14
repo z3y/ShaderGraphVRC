@@ -29,26 +29,10 @@ namespace z3y.BuiltIn.ShaderGraph
         public override void Setup(ref TargetSetupContext context)
         {
             context.AddAssetDependency(kSourceCodeGuid, AssetCollection.Flags.SourceDependency);
-            // If there is a custom GUI, we need to leave out the subtarget GUI or it will override the custom one due to ordering
-            // (Subtarget setup happens first, so it would always "win")
-            var biTarget = target as BuiltInTarget;
-            /*if (!context.HasCustomEditorForRenderPipeline(null) && string.IsNullOrEmpty(biTarget.customEditorGUI))
-                context.customEditorForRenderPipelines.Add((typeof(BuiltInUnlitGUI).FullName, ""));*/
-            
-            // Override EditorGUI
-           
-#if UNITY_2022_1_OR_NEWER
-            bool hasCustomEditorForRenderPipeline = context.HasCustomEditorForRenderPipeline("");
-#else
-            bool hasCustomEditorForRenderPipeline = context.HasCustomEditorForRenderPipeline(null);
-#endif
-            if (!hasCustomEditorForRenderPipeline && string.IsNullOrEmpty(biTarget.customEditorGUI))
+
+            if (!context.HasCustomEditorForRenderPipeline("") && string.IsNullOrEmpty(target.customEditorGUI))
             {
-#if UNITY_2022_1_OR_NEWER
-                context.AddCustomEditorForRenderPipeline(BuiltInTarget.kDefaultGUI, "");
-#else
-                context.customEditorForRenderPipelines.Add((BuiltInTarget.kDefaultGUI, ""));
-#endif
+                context.AddCustomEditorForRenderPipeline(typeof(BuiltInUnlitGUI).FullName, "");
             }
 
             // Process SubShaders

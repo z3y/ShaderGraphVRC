@@ -38,8 +38,7 @@ namespace z3y.BuiltIn.ShaderGraph.Nodes
         Direction = normalize(float3(1, 1, 0));
         AverageDirection = normalize(float3(1, 1, 0));
         Attenuation = 1.0;
-    #endif
-    #if SHADERPASS == SHADERPASS_UNLIT
+    #elif SHADERPASS == SHADERPASS_UNLIT
         Color = _LightColor0.rgb;
         Direction = Unity_SafeNormalize(UnityWorldSpaceLightDir(PositionWS));
         AverageDirection = Direction;
